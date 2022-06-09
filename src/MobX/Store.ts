@@ -55,8 +55,6 @@ export default class Store {
 
     let result = store.values.map((value: any, index) => {
 
-      console.log((1 / 100000) * (this.averagePopulation + (value[3] - this.averagePopulation) / 3))
-
       return (1 / 100000) * (this.averagePopulation + (value[3] - this.averagePopulation) / 2);
 
     });
@@ -68,10 +66,10 @@ export default class Store {
 
     if (this.focus.includes(-1)) return 0;
 
-    const lat1: number = parseInt(this.values[this.focus[0]][1]);
-    const lat2: number = parseInt(this.values[this.focus[1]][1]);
-    const lon1: number = parseInt(this.values[this.focus[0]][2]);
-    const lon2: number = parseInt(this.values[this.focus[1]][2]);
+    const lat1: number = parseFloat(this.values[this.focus[0]][1]);
+    const lat2: number = parseFloat(this.values[this.focus[1]][1]);
+    const lon1: number = parseFloat(this.values[this.focus[0]][2]);
+    const lon2: number = parseFloat(this.values[this.focus[1]][2]);
     const R = 6371e3; // metres
     const φ1 = lat1 * Math.PI / 180; // φ, λ in radians
     const φ2 = lat2 * Math.PI / 180;
@@ -85,7 +83,7 @@ export default class Store {
 
     const d = R * c; // in metres
 
-    return d / 1000;
+    return (d / 1000).toFixed(2);
 
   }
 

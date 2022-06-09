@@ -2,7 +2,7 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 import Store from '../../MobX/Store';
 import { observer } from 'mobx-react';
-import InfoCard from '../infoCard';
+import InfoCard from '../InfoCard';
 
 interface StoreProps{
 
@@ -53,7 +53,7 @@ function ScatterPlot({ store }: StoreProps){
       <div className="infoCard-list-container">
         {store.focus[0] >= 0 && <InfoCard information={store.values[store.focus[0]]} />}
         {store.focus[1] >= 0 && <InfoCard information={store.values[store.focus[1]]} />}
-        {store.distance > 0 && <h3>Distance: {store.distance} km</h3>}
+        {store.distance !== 0 && <h3>Distance: {store.distance} km</h3>}
       </div>
     </div>
   );
