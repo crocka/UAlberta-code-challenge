@@ -17,7 +17,7 @@ function ScatterPlot({ store }: StoreProps){
 
     store.fetchUrl();
 
-  }, []);
+  });
 
   return (
     <div className="container">
