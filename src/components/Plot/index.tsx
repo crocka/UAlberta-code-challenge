@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import Plot from 'react-plotly.js';
 import Store from '../../MobX/Store';
@@ -17,7 +18,7 @@ function ScatterPlot({ store }: StoreProps){
 
     store.fetchUrl();
 
-  });
+  }, []);
 
   return (
     <div className="container">
