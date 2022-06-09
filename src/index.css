@@ -5,6 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+.container {
+
+  display: flex;
+  flex-direction: row;
+}
+
+.infoCard-container {
+
+  border: 1px solid black;
+  padding: 2%;
 }
 
 code {
